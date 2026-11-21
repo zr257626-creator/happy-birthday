@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090418" />
+    <meta
+      name="description"
+      content="A little universe of birthday wishes, made just for you."
+    />
+    <title>A Birthday Wish Made of Magic</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="starfield" id="starfield" aria-hidden="true"></div>
+    <canvas class="effects-canvas" id="effects-canvas" aria-hidden="true"></canvas>
+    <div class="warm-flash" id="warm-flash" aria-hidden="true"></div>
+    <div class="balloon-layer" id="balloon-layer" aria-label="Floating balloons"></div>
+
+    <section class="intro-screen" id="intro-screen" aria-labelledby="intro-title">
+      <div class="intro-glow intro-glow-one"></div>
+      <div class="intro-glow intro-glow-two"></div>
+      <div class="intro-content">
+        <p class="eyebrow intro-eyebrow"><span class="live-dot"></span> A LITTLE UNIVERSE, JUST FOR YOU</p>
+        <h1 class="intro-title" id="intro-title">Someone wonderful<br /><span>has a birthday.</span></h1>
+        <label class="name-field">
+          <span>Who's the birthday star?</span>
+          <input id="birthday-name" type="text" maxlength="32" value="Birthday Star" autocomplete="off" />
+        </label>
+
+        <div class="gift-stage" aria-hidden="true">
+          <div class="gift-halo"></div>
+          <div class="gift-box">
+            <div class="gift-lid">
+              <span class="gift-ribbon gift-ribbon-top"></span>
+              <span class="gift-bow bow-left"></span>
+              <span class="gift-bow bow-right"></span>
+              <span class="gift-bow bow-knot"></span>
+            </div>
+            <div class="gift-body"><span class="gift-ribbon gift-ribbon-front"></span><span class="gift-sparkle">✦</span></div>
+            <div class="gift-shadow"></div>
+          </div>
+        </div>
+
+        <button class="unwrap-button" id="unwrap-button" type="button">
+          <span>Tap to Unwrap Your Surprise</span><span class="button-gift" aria-hidden="true">🎁</span>
+        </button>
+        <p class="intro-note">Sound on for a little extra magic ♪</p>
+      </div>
+      <span class="intro-orbit orbit-a" aria-hidden="true">✦</span>
+      <span class="intro-orbit orbit-b" aria-hidden="true">✧</span>
+      <span class="intro-orbit orbit-c" aria-hidden="true">·</span>
+    </section>
+
+    <main class="celebration" id="celebration" hidden aria-hidden="true">
+      <header class="topline reveal">
+        <a class="wish-brand" href="#top" aria-label="Back to birthday wish">
+          <span class="brand-star">✳</span> A WISH MADE OF MAGIC
+        </a>
+        <a class="topline-link" href="#letter">A note for you <span>↓</span></a>
+      </header>
+
+      <section class="hero section-shell" id="top" aria-labelledby="birthday-title">
+        <div class="hero-spark hero-spark-left" aria-hidden="true">✦</div>
+        <div class="hero-spark hero-spark-right" aria-hidden="true">✧</div>
+        <svg class="floating-crown" viewBox="0 0 90 76" aria-hidden="true">
+          <path d="m10 53 7-30 20 18 9-30 10 30 18-18 7 30H10Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M15 62h58" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="17" cy="21" r="4" fill="currentColor"/><circle cx="46" cy="9" r="4" fill="currentColor"/><circle cx="74" cy="21" r="4" fill="currentColor"/>
+        </svg>
+        <p class="eyebrow hero-eyebrow"><span class="live-dot"></span> TODAY THE UNIVERSE CELEBRATES YOU</p>
+        <h1 class="birthday-title" id="birthday-title" aria-label="Happy Birthday, Birthday Star!">
+          <span class="title-line">Happy Birthday,</span>
+          <span class="name-line" id="hero-name"></span>
+          <span class="title-sparkle" aria-hidden="true">✦</span>
+        </h1>
+        <p class="hero-message">Another trip around the sun. A thousand new reasons to shine.</p>
+        <a class="scroll-cue" href="#cake"><span class="scroll-cue-dot"></span> MAKE A WISH <span class="scroll-arrow">↓</span></a>
+        <div class="hero-orb orb-one" aria-hidden="true"></div>
+        <div class="hero-orb orb-two" aria-hidden="true"></div>
+      </section>
+
+      <section class="cake-section section-shell reveal" id="cake" aria-labelledby="cake-title">
+        <div class="section-kicker">01 <span></span> YOUR WISH IS WAITING</div>
+        <h2 class="section-title" id="cake-title">Make a wish<span class="gold-dot">.</span></h2>
+        <p class="section-subtitle">Close your eyes. Think of something beautiful.</p>
+        <div class="cake-scene">
+          <div class="cake-glow"></div>
+          <div class="cake">
+            <div class="candle-row" aria-label="Five birthday candles">
+              <div class="candle candle-one"><span class="flame"></span><span class="smoke"></span></div>
+              <div class="candle candle-two"><span class="flame"></span><span class="smoke"></span></div>
+              <div class="candle candle-three"><span class="flame"></span><span class="smoke"></span></div>
+              <div class="candle candle-four"><span class="flame"></span><span class="smoke"></span></div>
+              <div class="candle candle-five"><span class="flame"></span><span class="smoke"></span></div>
+            </div>
+            <div class="cake-layer cake-top"><span class="frosting-drip drip-one"></span><span class="frosting-drip drip-two"></span><span class="frosting-drip drip-three"></span></div>
+            <div class="cake-layer cake-middle"><span class="berry berry-one"></span><span class="berry berry-two"></span><span class="berry berry-three"></span></div>
+            <div class="cake-layer cake-bottom"></div>
+            <div class="cake-plate"></div>
+          </div>
+          <span class="cake-floating-star star-one" aria-hidden="true">✧</span>
+          <span class="cake-floating-star star-two" aria-hidden="true">✦</span>
+          <span class="cake-floating-star star-three" aria-hidden="true">·</span>
+        </div>
+        <button class="glow-button blow-button" id="blow-button" type="button">
+          <span class="button-icon">✧</span><span id="blow-button-label">Blow Out Candles</span><span class="button-cake" aria-hidden="true">🎂</span>
+        </button>
+        <p class="tiny-note" id="candle-status" aria-live="polite">Make a wish, then send it into the stars.</p>
+      </section>
+
+      <section class="letter-section section-shell reveal" id="letter" aria-labelledby="letter-title">
+        <div class="section-kicker">02 <span></span> A LITTLE NOTE FROM THE HEART</div>
+        <div class="letter-card tilt-card">
+          <div class="letter-glint" aria-hidden="true"></div>
+          <span class="letter-stamp" aria-hidden="true">✳</span>
+          <p class="letter-overline">SEALED WITH A HUG</p>
+          <h2 class="letter-title" id="letter-title">For you, <span id="letter-name">Birthday Star</span></h2>
+          <div class="letter-rule"><span>✦</span></div>
+          <p class="typed-message" id="typed-message" aria-label="A heartfelt birthday message"></p>
+          <p class="letter-signoff">With all the love in the universe, <span>always.</span></p>
+          <span class="letter-corner corner-one" aria-hidden="true">✧</span>
+          <span class="letter-corner corner-two" aria-hidden="true">✧</span>
+        </div>
+      </section>
+
+      <section class="memories-section section-shell reveal" id="memories" aria-labelledby="memories-title">
+        <div class="section-kicker">03 <span></span> LITTLE MOMENTS, BIG FEELINGS</div>
+        <div class="memory-heading">
+          <div><h2 class="section-title" id="memories-title">A life full of <span class="gradient-word">lovely.</span></h2>
+          <p class="section-subtitle">Here’s to all the magic you bring to the everyday.</p></div>
+          <span class="memory-heading-star" aria-hidden="true">✳</span>
+        </div>
+        <div class="memory-grid">
+          <article class="memory-card memory-sun tilt-card" tabindex="0">
+            <div class="memory-art art-sun" aria-hidden="true"><span class="art-sun-shape">☼</span><span class="art-cloud cloud-one">〰</span><span class="art-cloud cloud-two">〰</span></div>
+            <div class="memory-caption"><span>THE LITTLE THINGS</span><h3>Slow mornings</h3></div>
+            <span class="memory-number">01</span>
+          </article>
+          <article class="memory-card memory-night tilt-card" tabindex="0">
+            <div class="memory-art art-night" aria-hidden="true"><span class="art-moon">☾</span><span class="art-star star-a">✦</span><span class="art-star star-b">✧</span><span class="art-star star-c">·</span></div>
+            <div class="memory-caption"><span>THE BIG DREAMS</span><h3>Midnight talks</h3></div>
+            <span class="memory-number">02</span>
+          </article>
+          <article class="memory-card memory-bloom tilt-card" tabindex="0">
+            <div class="memory-art art-bloom" aria-hidden="true"><span class="art-flower">✿</span><span class="art-leaf leaf-a">⌁</span><span class="art-leaf leaf-b">⌁</span></div>
+            <div class="memory-caption"><span>THE GOOD GROWING</span><h3>Becoming you</h3></div>
+            <span class="memory-number">03</span>
+          </article>
+          <article class="memory-card memory-party tilt-card" tabindex="0">
+            <div class="memory-art art-party" aria-hidden="true"><span class="art-confetti">✦</span><span class="art-confetti confetti-b">✧</span><span class="art-confetti confetti-c">✳</span><span class="art-heart">♡</span></div>
+            <div class="memory-caption"><span>THE MOMENTS TO COME</span><h3>More joy, always</h3></div>
+            <span class="memory-number">04</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="envelope-section section-shell reveal" id="envelope" aria-labelledby="envelope-title">
+        <div class="section-kicker">04 <span></span> A LITTLE SOMETHING JUST FOR YOU</div>
+        <h2 class="section-title" id="envelope-title">One last surprise<span class="gold-dot">.</span></h2>
+        <p class="section-subtitle">There’s a birthday wish with your name on it.</p>
+        <button class="envelope-button" id="envelope-button" type="button" aria-expanded="false" aria-label="Open your birthday envelope">
+          <span class="envelope-shadow"></span>
+          <span class="envelope-card"><span class="voucher-kicker">YOUR OFFICIAL VOUCHER</span><strong>One whole day<br />celebrating <span id="voucher-name">you</span>.</strong><span class="voucher-signature">No expiry. All heart. ♡</span></span>
+          <span class="envelope-back"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-front"></span>
+          <span class="envelope-seal">✦</span>
+        </button>
+        <p class="envelope-hint" id="envelope-hint">Tap the envelope to open your wish</p>
+      </section>
+
+      <footer class="birthday-footer">
+        <div class="footer-stars" aria-hidden="true"><span>✦</span><span>✧</span><span>·</span></div>
+        <p class="footer-wish">May your next chapter be your <span>brightest yet.</span></p>
+        <p class="crafted">Crafted with <span class="beating-heart" aria-label="love">♥</span> &amp; Magic by <strong>ZIA</strong></p>
+        <a class="back-to-top" href="#top">BACK TO THE STARS <span>↑</span></a>
+      </footer>
+    </main>
+  </body>
+</html>
